@@ -274,15 +274,12 @@
 
                 
             }
+        }).then(function(){
+            console.log(matchingFriend);
+            $("#match-modal").modal('show');
+            $("#match-name").html("Name: " + matchingFriend.name);
+            $("#match-photo").attr("src", matchingFriend.photo);
         });
-
-        // $("#match-modal").modal('show');
-        // $("#match-name").html(matchingFriend.name);
-        // $("#match-photo").attr("src", matchingFriend.photo);
-
-        console.log(matchingFriend);
-        // // console.log(matchingFriend.name);
-        // // console.log(matchingFriend.photo);
 
     }
 </script>
