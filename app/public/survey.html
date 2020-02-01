@@ -50,7 +50,7 @@
             <br>
             <p>1. Going out is much better than staying in.</p>
             <select id="question-1">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </optionvalue="">
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -63,7 +63,7 @@
 
             <p>2. I enjoy talking about politics.</p>
             <select id="question-2">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -76,7 +76,7 @@
 
             <p>3. I'd rather talk on the phone instead of text.</p>
             <select id="question-3">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -89,7 +89,7 @@
 
             <p>4. My Mom is one of my best friends.</p>
             <select id="question-4">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -102,7 +102,7 @@
 
             <p>5. I'd like to travel the world.</p>
             <select id="question-5">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -115,7 +115,7 @@
 
             <p>6. My career is my first priority.</p>
             <select id="question-6">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </optionvalue="">
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -129,7 +129,7 @@
             
             <p>7. I prefer to have pets.</p>
             <select id="question-7">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </optionvalue="">
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -142,7 +142,7 @@
 
             <p>8. I post most aspects of my life to my social media accounts.</p>
             <select id="question-8">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -155,7 +155,7 @@
 
             <p>9. Marriage is my utlimate goal.</p>
             <select id="question-9">
-                <option>Please choose one of the following </option>
+                <option value="">Please choose one of the following </option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -168,7 +168,7 @@
 
             <p>10. I prefer to eat at fancy restaurants.</p>
             <select id="question-10">
-                <option class="default">Please choose one of the following </option>
+                <option value="">Please choose one of the following </option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -255,11 +255,7 @@
         .then(function(friendsArray) {
 
             
-            for (var i = 0; i < friendsArray.length; i++) {
-                // for (var j = 0; j < friendsArray[i].scores.length; j++) {
-                //     newTotal += (Math.abs(parseInt(friends.scores[i]) - parseInt(friendsArray[i].scores[j])));
-                // }
-                
+            for (var i = 0; i < friendsArray.length; i++) {                
                 newTotal = (Math.abs(parseInt(friends.scores[i]) - parseInt(friendsArray[i].scores[0])))
                 newTotal += (Math.abs(parseInt(friends.scores[i]) - parseInt(friendsArray[i].scores[1])))
                 newTotal += (Math.abs(parseInt(friends.scores[i]) - parseInt(friendsArray[i].scores[2])))
@@ -287,8 +283,21 @@
             $("#match-modal").modal('show');
             $("#match-name").html("Name: " + matchingFriend.name);
             $("#match-photo").attr("src", matchingFriend.photo);
-        });
 
+            $("#name").empty();
+            $("#photo-link").empty();
+            $("#question-1").val("");
+            $("#question-2").val("");
+            $("#question-3").val("");
+            $("#question-4").val("");
+            $("#question-5").val("");
+            $("#question-6").val("");
+            $("#question-7").val("");
+            $("#question-8").val("");
+            $("#question-9").val("");
+            $("#question-10").val("");
+        });
     }
+
 </script>
 
